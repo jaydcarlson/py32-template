@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "pyOCD",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "executable": "build/${workspaceFolderBasename}.elf",
+            "servertype": "pyocd",
+            "targetId": "PY32F002Ax5", 
+            "svdFile": "CMSIS/Device/PY32F0xx/py32f002axx.svd",
+            "preLaunchTask": "Build",
+            "showDevDebugOutput":"none",
+        },
+        {
+            "name": "J-Link",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "executable": "build/${workspaceFolderBasename}.elf",
+            "servertype": "jlink",
+            "device": "PY32F002Ax5", 
+            "svdFile": "CMSIS/Device/PY32F0xx/py32f002axx.svd",
+            "preLaunchTask": "Build",
+            "showDevDebugOutput":"none",
+        }
+    ]
+}
