@@ -69,18 +69,18 @@ C_SOURCES += PY32F0xx_HAL_Driver/Src/py32f0xx_ll_utils.c
 
 # ASM sources
 ASM_SOURCES =  \
-CMSIS/Device/PY32F0xx/Source/GCC/startup_py32f002a.s
+CMSIS/Device/PY32F0xx/Source/gcc/startup_py32f002a.s
 
 # C includes
 C_INCLUDES =  \
 -Iinc \
 -ICMSIS/Include \
 -ICMSIS/Device/PY32F0xx/Include \
--IPY32F0xx_HAL_Driver/inc \
+-IPY32F0xx_HAL_Driver/Inc \
 
 
 # link script
-LDSCRIPT = CMSIS/Device/PY32F0xx/Source/GCC/py32f002a.ld
+LDSCRIPT = CMSIS/Device/PY32F0xx/Source/gcc/py32f002a.ld
 
 
 ######################################
@@ -144,7 +144,7 @@ AS_INCLUDES =
 # compile gcc flags
 ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
 
-CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
+CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -Wno-maybe-uninitialized -fdata-sections -ffunction-sections
 
 ifeq ($(DEBUG), 1)
 CFLAGS += -g -gdwarf-2
